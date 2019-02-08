@@ -3,19 +3,19 @@ Für ein automatisiertes Deployment ist es ggf. sinnvoll, [ohne sudo laufen](htt
 `sudo usermod -aG docker $USER`
 
 Das Image basiert grob auf [dieser Anleitung](https://docs.docker.com/get-started/part2/) in den Docker Docs. 
-Das Image enthält ein schlankes Python 2.7, auf dem Flask (ein Webframework) läuft.   
+Das Image enthält ein schlankes Python 2.7, auf dem Flask ([ein Webframework](http://flask.pocoo.org/)) läuft.   
 
-###Erster Build bzw. ReBuild:
+### Erster Build bzw. ReBuild:
  
 `docker build --tag=python-2.7-flask .`
 
-###Container hochfahren
+### Container hochfahren
 
 localhost:4000 auf :80 auf der Maschine im Container (läuft im Hintergrund) routen:
 
 `docker run -d -p 4000:80 python-2.7-flask`
 
-###Alle sinnvollen Anweisungen
+### Alle sinnvollen Anweisungen
 
 ```
 docker build -t friendlyhello .                                  # Create image using this directory's Dockerfile
